@@ -1,0 +1,64 @@
+main {
+  width: 100%;
+  height: 100%;
+  // background: url(../img/camera.jpg) no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  .home {
+    width: 85%;
+    padding-top: 20.2rem;
+    margin: auto;
+    .show-case {
+      display: grid;
+      max-height: 90vh;
+      grid-template-columns: 20% 60% 20%;
+      grid-template-rows: 1fr 1fr;
+      @media screen and (max-width: $max-md) {
+        grid-template-columns: 10% 1fr 10%;
+        grid-template-rows: 1fr 1fr 1fr;
+        text-align: center;
+      }
+      h2 {
+        position: relative;
+        z-index: 10;
+        grid-column: 1/2;
+        grid-row: 1;
+        @media screen and (max-width: $max-md) {
+          grid-column: 2/3;
+        }
+      }
+      img {
+        grid-column: 2/3;
+        grid-row: 1;
+        transform: rotate(30deg);
+        @media screen and (max-width: $max-lg) {
+          grid-column: 2/3;
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+          grid-row: 2;
+          transform: rotate(20deg);
+        }
+      }
+      .dots {
+        grid-column: -1/-2;
+        grid-row: 1;
+        align-self: center;
+        justify-self: center;
+      }
+      .info {
+        position: relative;
+        grid-column: -1/-2;
+        grid-row: 1;
+        align-self: end;
+        padding: 3rem;
+        @media screen and (max-width: $max-md) {
+          grid-column: 2/3;
+          grid-row: 3;
+          align-self: center;
+        }
+      }
+    }
+  }
+}
